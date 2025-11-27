@@ -45,7 +45,7 @@ export const analyzePlayerProgress = async (player: Player, attendance: Attendan
     const total = playerRecords.length;
     const notes = playerRecords.map(r => r.notes).filter(n => n).join("; ");
 
-    const prompt = `Analyze the progress of a badminton student named ${player.name} (${player.level}).
+    const prompt = `Analyze the progress of a badminton student named ${player.name}.
     Attendance: ${presentCount}/${total} sessions.
     Coach Notes: ${notes || "No specific notes recorded."}
     

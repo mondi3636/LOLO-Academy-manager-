@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useStore } from '../store';
 import { Card, Button, Input, Select, Badge } from '../components/UI';
@@ -61,7 +62,7 @@ export const Finances: React.FC = () => {
                                             <Badge color="gray">{payment.method}</Badge>
                                         </td>
                                         <td className="px-6 py-4 text-right font-bold text-green-600">
-                                            +${payment.amount}
+                                            +MVR {payment.amount}
                                         </td>
                                     </tr>
                                 );
@@ -82,7 +83,7 @@ export const Finances: React.FC = () => {
                                 <span className="text-sm font-medium text-gray-900">{player.name}</span>
                             </div>
                             <span className={`text-sm font-bold ${player.balance < 0 ? 'text-red-600' : 'text-green-600'}`}>
-                                {player.balance < 0 ? `-$${Math.abs(player.balance)}` : `$${player.balance}`}
+                                {player.balance < 0 ? `-MVR ${Math.abs(player.balance)}` : `MVR ${player.balance}`}
                             </span>
                         </div>
                     ))}
@@ -107,7 +108,7 @@ export const Finances: React.FC = () => {
               </Select>
               <div className="grid grid-cols-2 gap-4">
                 <Input 
-                    label="Amount ($)" 
+                    label="Amount (MVR)" 
                     type="number" 
                     value={newPayment.amount} 
                     onChange={e => setNewPayment({...newPayment, amount: e.target.value as any})} 
